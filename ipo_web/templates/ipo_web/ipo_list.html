@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPO List</title>
+    <script src="/static/ipo_web/js/jsPages/ipo_lists.js" defer></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h1>IPO Listings</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>IPO Date</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="ipo-table-body">
+            <!-- IPO rows will be dynamically added here -->
+        </tbody>
+    </table>
+</body>
+</html>

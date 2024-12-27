@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'ipo_web/css/pages/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the IPO Management System</h1>
+    </header>
+    <main>
+        <p>Manage and view IPO data easily using the options below:</p>
+        <div class="link-container">
+            <a href="{% url 'ipo_list_page' %}" class="button">View IPO Listings</a>
+            <a href="{% url 'admin_dashboard' %}" class="button">Admin Dashboard</a>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 IPO Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
