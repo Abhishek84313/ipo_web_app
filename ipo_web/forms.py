@@ -8,3 +8,4 @@ class IPOInfoForm(forms.ModelForm):
         widgets = {
             'ipo_date': forms.DateInput(attrs={'type': 'date'}),
         }
+ 

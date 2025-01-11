@@ -56,7 +56,3 @@ class IPOInfoAPI(APIView):
         return render(request, 'ipo_web/admin_dashboard.html', {'form': form})
     def home_page(request):
         return render(request, 'ipo_web/home_page.html')
-
-# def force_logout(request):
-#     logout(request)  # Logs out the user
-

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to fetch IPO data
     async function fetchIPOData() {
-        try {
+        try { 
             const response = await fetch('https://ipo-web-app-nine.vercel.app/api/data/'); // Ensure the endpoint matches the URL pattern
             if (!response.ok) {
                 console.error('Failed to fetch IPO data:', response.statusText);

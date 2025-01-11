@@ -82,7 +82,7 @@
 
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.as_p }} 
         <button type="submit">Add IPO</button>
     </form>
     <a href="{% url 'ipo_list_page' %}">View IPO Listing</a>
