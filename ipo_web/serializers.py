@@ -9,4 +9,4 @@ class UserSerializer(ModelSerializer):
 class IPOInfoSerializer(ModelSerializer):
     class Meta:
         model = IPOInfo
-        fields = ['id', 'company_name', 'ipo_date', 'price']
+        fields = ['logo', 'id', 'company_name', 'ipo_date', 'price']

@@ -14,8 +14,8 @@ from pathlib import Path
 import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-from decouple import config
-DATABASE_URL = config('DATABASE_URL', default=None)
+# from decouple import config
+# DATABASE_URL = config('DATABASE_URL', default=None)
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,6 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 AUTH_USER_MODEL = 'ipo_web.User'
 LOGIN_URL = '/admin/login/'  # Redirect users to admin login if not authenticated
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Ensure the session expires on browser close
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
@@ -95,13 +97,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ipo_web_app.wsgi.application'
 
-
+from decouple import config
+import dj_database_url
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+from decouple import config
+DATABASE_URL = config('DATABASE_URL', default=None)
+
 DATABASES = {
     'default': dj_database_url.config(
-        default=DATABASE_URL
+        default=config('DATABASE_URL'),
+        engine='django.db.backends.postgresql',  # Ensure ENGINE is explicitly set
     )
 }
 
@@ -119,6 +126,16 @@ DATABASES = {
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'IPO_Database',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Abhi8951@',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 
 

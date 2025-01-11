@@ -20,6 +20,10 @@ class IPOInfoAPI(APIView):
         ipo_info = IPOInfo.objects.all()
         serializer = IPOInfoSerializer(ipo_info, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    def ipo_list_view(request):
+        ipo_list = IPOInfo.objects.all()
+        return render(request, 'ipo_web/ipo_list.html', {'ipo_list': ipo_list})
 
     def post(self, request):
         serializer = IPOInfoSerializer(data=request.data)
